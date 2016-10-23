@@ -1,5 +1,3 @@
-#r "NLog.dll"
-
 using System.Net;
 using System.Threading.Tasks;
 using System.Configuration;
