@@ -46,7 +46,7 @@ private static Logger HookNLogToAzureLog(TraceWriter log)
     return LogManager.GetLogger("AzureFunction");
 }
 
-public static Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log)
+public static HttpResponseMessage Run(HttpRequestMessage req, TraceWriter log)
 {
     // Use the default logging infrastucture since NLog is not yet initialized
     log.Info("Received HTTP Request. Processing...");
