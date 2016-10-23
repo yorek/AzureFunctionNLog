@@ -1,6 +1,6 @@
 {
   "frameworks": {
-    "net452": {
+    "net46": {
       "dependencies": {
         "NLog": "4.3.1"
       }
