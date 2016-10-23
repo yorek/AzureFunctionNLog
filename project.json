@@ -1,0 +1,9 @@
+{
+  "frameworks": {
+    "net452": {
+      "dependencies": {
+        "NLog": "4.3.1"
+      }
+    }
+  }
+}
