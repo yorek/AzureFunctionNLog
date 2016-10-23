@@ -1,4 +1,4 @@
-#r ".\NLog.dll"
+#r "NLog.dll"
 
 using System.Net;
 using System.Threading.Tasks;
