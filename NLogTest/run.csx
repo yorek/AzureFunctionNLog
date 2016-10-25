@@ -6,9 +6,9 @@ using NLog.Config;
 using NLog.Targets;
 
 [Target("AzureFunctionLog")]
-public sealed class AzureFuctionLogTarget : TargetWithLayout
+public sealed class AzureFunctionLogTarget : TargetWithLayout
 {
-    public AzureFuctionLogTarget(TraceWriter azureLogTraceWriter)
+    public AzureFunctionLogTarget(TraceWriter azureLogTraceWriter)
     {
         AzureLogTraceWriter = azureLogTraceWriter;
     }
@@ -30,13 +30,13 @@ private static Logger HookNLogToAzureLog(TraceWriter log)
     var config = new LoggingConfiguration();
 
     // Add the AzureFuctionLogTarget Target
-    var azureTarget = new AzureFuctionLogTarget(log);
+    var azureTarget = new AzureFunctionLogTarget(log);
     config.AddTarget("azure", azureTarget);
 
     // Define the Layout
     azureTarget.Layout = @"${level:uppercase=true}|${threadid:padCharacter=0:padding=3}|${message}";
 
-    // Create a rule so that all logging will be sent to AzureFuctionLogTarget
+    // Create a rule so that all logging will be sent to AzureFunctionLogTarget
     var rule1 = new LoggingRule("*", LogLevel.Trace, azureTarget);
     config.LoggingRules.Add(rule1);
 
